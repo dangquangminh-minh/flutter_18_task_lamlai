@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -8,8 +9,6 @@ class HomePage extends StatelessWidget {
 
   static const primary = Color(0xFF245D85);
 
-  // Tạo thẻ dùng chung cho các bài; chỉ thay nội dung và đường dẫn.
-  // Dùng context.push để bấm Back quay lại trang chủ.
   Widget _taskCard({
     required BuildContext context,
     required String title,
@@ -126,7 +125,10 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+
             const SizedBox(height: 25),
+
+            // chương 1
             const Text(
               'CHƯƠNG 1 - STATE MANAGEMENT (BLOC)',
               style: TextStyle(
@@ -136,6 +138,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 15),
+
             _taskCard(
               context: context,
               title: 'Bài 01 - Mini Cart',
@@ -144,6 +147,7 @@ class HomePage extends StatelessWidget {
               color: const Color(0xFF238653),
               route: AppRoutes.task01,
             ),
+
             _taskCard(
               context: context,
               title: 'Bài 02 - News Filter Hub',
@@ -161,13 +165,22 @@ class HomePage extends StatelessWidget {
               color: const Color(0xFFC62828),
               route: AppRoutes.task03,
             ),
+
             const SizedBox(height: 24),
+
+
+            //chương 2
+
             const Text(
               'CHƯƠNG 2 - REST API INTEGRATION',
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold,
-                  color: primary),
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.bold,
+                color: primary,
+              ),
             ),
             const SizedBox(height: 15),
+
             _taskCard(
               context: context,
               title: 'Bài 04 - Country Explorer',
@@ -176,6 +189,7 @@ class HomePage extends StatelessWidget {
               color: const Color(0xFF158C82),
               route: AppRoutes.task04,
             ),
+
             _taskCard(
               context: context,
               title: 'Bài 05 - Weather Lens',
@@ -184,6 +198,7 @@ class HomePage extends StatelessWidget {
               color: const Color(0xFF147EBC),
               route: AppRoutes.task05,
             ),
+
             _taskCard(
               context: context,
               title: 'Bài 06 - Visual Newsroom',
@@ -191,6 +206,45 @@ class HomePage extends StatelessWidget {
               icon: Icons.auto_stories_rounded,
               color: const Color(0xFF29364D),
               route: AppRoutes.task06,
+            ),
+
+            // chương 3
+            const SizedBox(height: 24),
+            const Text(
+              'CHƯƠNG 3 - ANIMATION',
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.bold,
+                color: primary,
+              ),
+            ),
+            const SizedBox(height: 15),
+            _taskCard(
+              context: context,
+              title: 'Bài 07 - Mood Cards',
+              subtitle: 'Thẻ hoạt động, yêu thích và hiệu ứng chuyển động',
+              icon: Icons.favorite_rounded,
+              color: const Color(0xFF2E7D32),
+              route: AppRoutes.task07,
+            ),
+
+
+            _taskCard(
+              context: context,
+              title: 'Bài 08 - Photo Stories',
+              subtitle: 'Thư viện ảnh, bộ lọc và Hero Animation',
+              icon: Icons.photo_library_rounded,
+              color: const Color(0xFFF26B0A),
+              route: AppRoutes.task08,
+            ),
+
+            _taskCard(
+              context: context,
+              title: 'Bài 09 - Motion Travel',
+              subtitle: 'Khám phá du lịch, thời tiết và chuyển cảnh',
+              icon: Icons.flight_takeoff_rounded,
+              color: const Color(0xFFC62828),
+              route: AppRoutes.task09,
             ),
           ],
         ),
