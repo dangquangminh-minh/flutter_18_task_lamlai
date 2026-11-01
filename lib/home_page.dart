@@ -8,7 +8,8 @@ class HomePage extends StatelessWidget {
 
   static const primary = Color(0xFF245D85);
 
-
+  // Tạo thẻ dùng chung cho các bài; chỉ thay nội dung và đường dẫn.
+  // Dùng context.push để bấm Back quay lại trang chủ.
   Widget _taskCard({
     required BuildContext context,
     required String title,
@@ -159,6 +160,37 @@ class HomePage extends StatelessWidget {
               icon: Icons.travel_explore_rounded,
               color: const Color(0xFFC62828),
               route: AppRoutes.task03,
+            ),
+            const SizedBox(height: 24),
+            const Text(
+              'CHƯƠNG 2 - REST API INTEGRATION',
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold,
+                  color: primary),
+            ),
+            const SizedBox(height: 15),
+            _taskCard(
+              context: context,
+              title: 'Bài 04 - Country Explorer',
+              subtitle: 'Danh bạ quốc gia, tìm kiếm và sắp xếp dân số',
+              icon: Icons.public_rounded,
+              color: const Color(0xFF158C82),
+              route: AppRoutes.task04,
+            ),
+            _taskCard(
+              context: context,
+              title: 'Bài 05 - Weather Lens',
+              subtitle: 'Thời tiết hiện tại và dự báo theo ngày',
+              icon: Icons.wb_sunny_outlined,
+              color: const Color(0xFF147EBC),
+              route: AppRoutes.task05,
+            ),
+            _taskCard(
+              context: context,
+              title: 'Bài 06 - Visual Newsroom',
+              subtitle: 'Tin tức hình ảnh, SQLite và bookmark offline',
+              icon: Icons.auto_stories_rounded,
+              color: const Color(0xFF29364D),
+              route: AppRoutes.task06,
             ),
           ],
         ),
