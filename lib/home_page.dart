@@ -287,6 +287,7 @@ class HomePage extends StatelessWidget {
               title: 'Bài 11 - Country Share Links',
               subtitle: 'Danh sách quốc gia và link theo khu vực',
               icon: Icons.public_rounded,
+
               color: const Color(0xFF6354C7),
               route: AppRoutes.task11,
             ),
@@ -302,6 +303,55 @@ class HomePage extends StatelessWidget {
               route: AppRoutes.task12,
             ),
 
+
+
+           //chương 5
+            const SizedBox(height: 24),
+
+            const Text(
+              'CHƯƠNG 5 - BACKGROUND TASKS',
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.bold,
+                color: primary,
+              ),
+            ),
+
+
+            const SizedBox(height: 15),
+            // bài 13
+            _taskCard(
+              context: context,
+              title: 'Bài 13 - Daily Reminder',
+              subtitle: 'Nhắc học hằng ngày, lịch tuần và thông báo',
+              icon: Icons.notifications_active_rounded,
+              color: const Color(0xFF23795B),
+              route: AppRoutes.task13,
+            ),
+
+
+            // bài 14
+            _taskCard(
+              context: context,
+              title: 'Bài 14 - Weather Sync Worker',
+              subtitle: 'Đồng bộ nền, cache Hive và cảnh báo nhiệt độ',
+
+              icon: Icons.cloud_sync_rounded,
+              color: const Color(0xFFE68B2E),
+              route: AppRoutes.task14,
+            ),
+
+
+            
+            // bài 15
+            _taskCard(
+              context: context,
+              title: 'Bài 15 - Offline News Sync',
+              subtitle: 'SQLite, bookmark offline và retry/backoff',
+              icon: Icons.auto_stories_rounded,
+              color: const Color(0xFFBE3E4F),
+              route: AppRoutes.task15,
+            ),
 
 
           ],

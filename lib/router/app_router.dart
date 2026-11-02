@@ -63,6 +63,21 @@ import '../tasks/04_Deep_Linking/task_12_campaign_gateway/presentation/pages/cam
 import '../tasks/04_Deep_Linking/task_12_campaign_gateway/presentation/pages/campaign_scanner_page.dart';
 import '../tasks/04_Deep_Linking/task_12_campaign_gateway/services/campaign_coordinator.dart';
 
+
+
+// chương 5
+// bài 13
+import '../tasks/05_Background_Tasks/task_13_daily_reminder/data/datasources/reminder_local_data_source.dart';
+import '../tasks/05_Background_Tasks/task_13_daily_reminder/data/datasources/reminder_remote_data_source.dart';
+import '../tasks/05_Background_Tasks/task_13_daily_reminder/data/repositories/reminder_repository.dart';
+import '../tasks/05_Background_Tasks/task_13_daily_reminder/presentation/pages/daily_reminder_page.dart';
+
+// bài 14
+import '../tasks/05_Background_Tasks/task_14_weather_sync_worker/presentation/pages/weather_sync_page.dart';
+
+// bài 15
+import '../tasks/05_Background_Tasks/task_15_offline_news_sync/presentation/pages/news_sync_page.dart';
+
 abstract final class AppRoutes {
   static const home = '/';
   static const task01 = '/task-01';
@@ -77,12 +92,17 @@ abstract final class AppRoutes {
 
   static const task07 = '/task-07';
   static const task08 = '/task-08';
-  
+
   static const task09 = '/task-09';
 
   static const task10 = '/task-10';
   static const task11 = '/task-11';
   static const task12 = '/task-12';
+
+  // Chương 5
+  static const task13 = '/task-13';
+   static const task14 = '/task-14';
+  static const task15 = '/task-15';
 }
 
 
@@ -478,5 +498,47 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const CampaignScannerPage(),
     ),
 
+
+
+
+   // bài 13
+    GoRoute(
+      path: AppRoutes.task13,
+      name: 'task13',
+      builder: (context, state) {
+    
+        final repository = ReminderRepository(
+          local: ReminderLocalDataSource(),
+
+          remote: ReminderRemoteDataSource(),
+        );
+
+        return DailyReminderPage(
+          repository: repository,
+
+          // cho ui biết người dùng vừa mở app từ t.báo
+          openedFromNotification:
+              state.uri.queryParameters['from'] == 'notification',
+        );
+      },
+    ),
+
+    //bài 14
+    GoRoute(
+      path: AppRoutes.task14,
+      name: 'task14',
+      builder: (context, state) {
+        return const WeatherSyncPage();
+      },
+    ),
+
+    // bài 15
+    GoRoute(
+      path: AppRoutes.task15,
+      name: 'task15',
+      builder: (context, state) {
+        return const NewsSyncPage();
+      },
+    ),
   ],
 );

@@ -11,6 +11,10 @@ import 'router/app_router.dart';
 import 'tasks/04_Deep_Linking/chapter4_dependencies.dart';
 import 'tasks/04_Deep_Linking/task_10_post_link_router/services/deep_link_bootstrap.dart';
 
+
+import 'tasks/05_Background_Tasks/chapter5_bootstrap.dart';
+import 'tasks/05_Background_Tasks/task_13_daily_reminder/services/reminder_notification_service.dart';
+
 Future<void> main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,10 +33,24 @@ Future<void> main() async {
 
   await Chapter4Dependencies.initialize();
 
+  final notificationLaunchPayload = await Chapter5Bootstrap.initialize(
+    onReminderTap: (payload) {
+      if (payload == ReminderNotificationService.payload) {
+        appRouter.go('${AppRoutes.task13}?from=notification');
+      }
+    },
+  );
 
   final appLinks = Chapter4Dependencies.appLinks;
 
   runApp(MyApp(appLinks: appLinks));
+
+
+    if (notificationLaunchPayload == ReminderNotificationService.payload) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        appRouter.go('${AppRoutes.task13}?from=notification');
+      });
+    }
 }
 
 class MyApp extends StatelessWidget {
