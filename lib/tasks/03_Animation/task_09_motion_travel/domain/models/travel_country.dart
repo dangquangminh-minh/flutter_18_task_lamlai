@@ -6,9 +6,9 @@ class TravelCountry {
 
     required this.officialName,// tên chính thức
 
-    required this.cca2, // để p.bt qg
+    required this.cca2, // để p.bt qg 2 chữ
 
-    required this.capital,
+    required this.capital, // 3 
     required this.region,
     required this.subregion,
 
@@ -20,8 +20,8 @@ class TravelCountry {
     required this.timezone,
 
 //tọa độ 
-    required this.latitude,
-    required this.longitude,
+    required this.latitude, // k.độ
+    required this.longitude, // vĩ
   });
 
   final String name;

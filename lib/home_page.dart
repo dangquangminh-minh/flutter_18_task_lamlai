@@ -119,7 +119,7 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(height: 7),
                   Text(
-                    'Thực hành Flutter từ cơ bản đến nâng cao.',
+                    'Thực hành Flutter 18 ták',
                     style: TextStyle(color: Colors.white70),
                   ),
                 ],
@@ -148,6 +148,8 @@ class HomePage extends StatelessWidget {
               route: AppRoutes.task01,
             ),
 
+
+
             _taskCard(
               context: context,
               title: 'Bài 02 - News Filter Hub',
@@ -167,6 +169,7 @@ class HomePage extends StatelessWidget {
             ),
 
             const SizedBox(height: 24),
+
 
 
             //chương 2
@@ -189,6 +192,8 @@ class HomePage extends StatelessWidget {
               color: const Color(0xFF158C82),
               route: AppRoutes.task04,
             ),
+
+
 
             _taskCard(
               context: context,
@@ -218,6 +223,7 @@ class HomePage extends StatelessWidget {
                 color: primary,
               ),
             ),
+
             const SizedBox(height: 15),
             _taskCard(
               context: context,
@@ -227,6 +233,8 @@ class HomePage extends StatelessWidget {
               color: const Color(0xFF2E7D32),
               route: AppRoutes.task07,
             ),
+
+
 
 
             _taskCard(
@@ -246,6 +254,56 @@ class HomePage extends StatelessWidget {
               color: const Color(0xFFC62828),
               route: AppRoutes.task09,
             ),
+
+
+
+
+            // chương 4
+            const SizedBox(height: 24),
+
+            const Text(
+              'CHƯƠNG 4 - DEEP LINKING',
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.bold,
+                color: primary,
+              ),
+            ),
+
+
+            const SizedBox(height: 15),
+
+            _taskCard(
+              context: context,
+              title: 'Bài 10 - Post Link Router',
+              subtitle: 'Mở bài viết từ URL và chia sẻ Deep Link',
+              icon: Icons.link_rounded,
+              color: const Color(0xFF0E8D7F),
+              route: AppRoutes.task10,
+            ),
+
+            _taskCard(
+              context: context,
+              title: 'Bài 11 - Country Share Links',
+              subtitle: 'Danh sách quốc gia và link theo khu vực',
+              icon: Icons.public_rounded,
+              color: const Color(0xFF6354C7),
+              route: AppRoutes.task11,
+            ),
+
+
+
+            _taskCard(
+              context: context,
+              title: 'Bài 12 - Campaign Gateway',
+              subtitle: 'Auth Guard, cache và Signed Deep Link',
+              icon: Icons.campaign_rounded,
+              color: const Color(0xFF151E23),
+              route: AppRoutes.task12,
+            ),
+
+
+
           ],
         ),
       ),
