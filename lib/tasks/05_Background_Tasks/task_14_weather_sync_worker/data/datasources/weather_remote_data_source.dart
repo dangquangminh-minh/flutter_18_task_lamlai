@@ -21,7 +21,7 @@ class WeatherSyncException
 
 
 class WeatherRemoteDataSource {
-  WeatherRemoteDataSource({required Dio dio}) : _dio = dio;
+  WeatherRemoteDataSource({required this._dio});
 
   final Dio _dio;
 

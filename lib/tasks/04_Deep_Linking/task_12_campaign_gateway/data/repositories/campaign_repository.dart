@@ -6,9 +6,9 @@ import '../datasources/campaign_remote_data_source.dart';
 
 class CampaignRepository {
   CampaignRepository({
-    required CampaignRemoteDataSource remote,
-    required CampaignLocalDataSource local,
-  }) : _remote = remote, _local = local;
+    required this._remote,
+    required this._local,
+  });
 
   final CampaignRemoteDataSource _remote;
   final CampaignLocalDataSource _local;

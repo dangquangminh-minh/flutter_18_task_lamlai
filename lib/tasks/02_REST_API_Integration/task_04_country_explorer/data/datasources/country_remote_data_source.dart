@@ -13,7 +13,7 @@ class CountryApiException implements Exception {
 
 
 class CountryRemoteDataSource {
-  CountryRemoteDataSource({required Dio dio}) : _dio = dio;
+  CountryRemoteDataSource({required this._dio});
   final Dio _dio;
 
   Future<List<CountryModel>> fetchCountries() async {

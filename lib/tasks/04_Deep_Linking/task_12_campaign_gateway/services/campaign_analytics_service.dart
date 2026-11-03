@@ -8,8 +8,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 class CampaignAnalyticsService {
   CampaignAnalyticsService({
-    required Box<dynamic> box,
-  }) : _box = box;
+    required this._box,
+  });
 
   final Box<dynamic> _box;
 

@@ -354,6 +354,53 @@ class HomePage extends StatelessWidget {
             ),
 
 
+
+
+            // chương 6 
+            const SizedBox(height: 24),
+
+            const Text(
+              'CHƯƠNG 6 - AUTHENTICATION',
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+
+            // bài 16 
+            _taskCard(
+              context: context,
+              title: 'Bài 16 - Campus Login',
+              subtitle: 'Firebase Auth, validation và hồ sơ sinh viên',
+              icon: Icons.school_rounded,
+              color: const Color(0xFF14715C),
+              route: AppRoutes.task16,
+            ),
+
+
+            // bài 177
+            _taskCard(
+              context: context,
+              title: 'Bài 17 - Social Sign-In',
+              subtitle: 'Google OAuth, liên kết tài khoản và lịch sử',
+              icon: Icons.hub_rounded,
+              color: const Color(0xFFE76B32),
+              route: AppRoutes.task17,
+            ),
+
+
+            // bài 18
+            _taskCard(
+              context: context,
+              title: 'Bài 18 - Secure Travel',
+              subtitle: 'Auth Guard, thời tiết, cache mã hóa và sinh trắc học',
+              icon: Icons.shield_rounded,
+              color: const Color(0xFF9E2A45),
+              route: AppRoutes.task18,
+            ),
           ],
         ),
       ),

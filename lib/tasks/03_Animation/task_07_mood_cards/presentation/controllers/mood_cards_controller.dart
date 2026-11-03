@@ -7,7 +7,7 @@ import '../../domain/models/activity_model.dart';
 enum MoodCardsStatus { initial, loading, success, error }
 
 class MoodCardsController extends ChangeNotifier {
-  MoodCardsController({required ActivityRepository repository}) : _repository = repository;
+  MoodCardsController({required this._repository});
   final ActivityRepository _repository;
 
   MoodCardsStatus status = MoodCardsStatus.initial;

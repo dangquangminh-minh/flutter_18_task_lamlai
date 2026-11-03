@@ -50,7 +50,7 @@ class PixabayImageAsset {
 
 
 class NewsRemoteDataSource {
-  NewsRemoteDataSource({required Dio dio}) : _dio = dio;
+  NewsRemoteDataSource({required this._dio});
 
   final Dio _dio;
 

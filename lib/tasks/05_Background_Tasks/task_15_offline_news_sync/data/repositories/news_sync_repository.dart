@@ -7,8 +7,7 @@ import '../datasources/news_local_database.dart';
 
 
 class NewsSyncRepository {
-  NewsSyncRepository({required NewsLocalDatabase local})
-      : _local = local;
+  NewsSyncRepository({required this._local});
 
   final NewsLocalDatabase _local;
 

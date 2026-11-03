@@ -39,10 +39,12 @@ class WeatherModel {
     required this.countryCode,
     required this.temperature,
     required this.feelsLike,
+
     required this.tempMin,
     required this.tempMax,
     required this.description,
     required this.iconCode,
+    
     required this.humidity,
     required this.windSpeedKmh,
     required this.pressure,

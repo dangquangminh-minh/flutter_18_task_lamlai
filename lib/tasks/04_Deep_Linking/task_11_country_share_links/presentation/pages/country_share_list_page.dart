@@ -61,7 +61,7 @@ class _CountryShareListPageState extends State<CountryShareListPage> {
     search.clear();
     controller.setSearch('');
     // Truy cập qua router để query param luôn tương ứng với bộ lọc trong UI.
-    context.pushReplacement(Uri(path: '/countries', queryParameters: {if (region != null) 'region': region}).toString());
+    context.pushReplacement(Uri(path: '/countries', queryParameters: {'region': ?region}).toString());
   }
 
   // dùng mã iso khi có, còn thiếu mã thì chuyển sang route country-name

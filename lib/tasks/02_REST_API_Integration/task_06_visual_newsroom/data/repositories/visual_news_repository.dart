@@ -11,10 +11,10 @@ import '../datasources/unsplash_remote_data_source.dart';
 
 class VisualNewsRepository {
   VisualNewsRepository({
-    required NewsRemoteDataSource newsRemote,
-    required UnsplashRemoteDataSource unsplashRemote,
-    required NewsLocalDataSource local,
-  }) : _newsRemote = newsRemote, _unsplashRemote = unsplashRemote, _local = local;
+    required this._newsRemote,
+    required this._unsplashRemote,
+    required this._local,
+  });
 
   final NewsRemoteDataSource _newsRemote;
   final UnsplashRemoteDataSource _unsplashRemote;
@@ -52,7 +52,7 @@ class VisualNewsRepository {
       final enriched = raw.map((article) {
         if (article.imageUrl.isNotEmpty || fallback == null) return article;
         return article.copyWith(
-          imageUrl: fallback!.imageUrl,
+          imageUrl: fallback.imageUrl,
           imageAuthor: fallback.photographerName,
           imageAuthorUrl: fallback.photographerUrl,
         );

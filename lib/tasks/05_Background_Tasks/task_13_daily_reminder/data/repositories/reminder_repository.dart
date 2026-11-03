@@ -8,10 +8,9 @@ import '../datasources/reminder_remote_data_source.dart';
 
 class ReminderRepository {
   ReminderRepository({
-    required ReminderLocalDataSource local,
-    required ReminderRemoteDataSource remote,
-  }) : _local = local,
-       _remote = remote;
+    required this._local,
+    required this._remote,
+  });
 
   final ReminderLocalDataSource _local;
   final ReminderRemoteDataSource _remote;

@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import '../../domain/models/activity_model.dart';
 
 class ActivityRemoteDataSource {
-  ActivityRemoteDataSource({required Dio dio}) : _dio = dio;
+  ActivityRemoteDataSource({required this._dio});
 
   final Dio _dio;
 

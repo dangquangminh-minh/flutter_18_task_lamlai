@@ -8,7 +8,7 @@ import 'package:path_provider/path_provider.dart';
 
 
 class ThumbnailFileStore {
-  ThumbnailFileStore({required Dio dio}) : _dio = dio;
+  ThumbnailFileStore({required this._dio});
 
   final Dio _dio;
 

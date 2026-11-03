@@ -30,14 +30,11 @@ class MotionTravelLoadResult {
 
 class MotionTravelRepository {
   MotionTravelRepository({
-    required MotionCountryRemoteDataSource countryRemote,
-    required MotionPhotoRemoteDataSource photoRemote,
-    required MotionWeatherRemoteDataSource weatherRemote,
-    required MotionTravelLocalDataSource local,
-  }) : _countryRemote = countryRemote,
-       _photoRemote = photoRemote,
-       _weatherRemote = weatherRemote,
-       _local = local;
+    required this._countryRemote,
+    required this._photoRemote,
+    required this._weatherRemote,
+    required this._local,
+  });
 
   final MotionCountryRemoteDataSource _countryRemote;
   final MotionPhotoRemoteDataSource _photoRemote;

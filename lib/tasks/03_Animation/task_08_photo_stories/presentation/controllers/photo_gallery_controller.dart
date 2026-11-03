@@ -8,7 +8,7 @@ import '../../domain/models/pixabay_photo.dart';
 enum PhotoGalleryStatus { initial, loading, success, error } // trạng thái chính
 
 class PhotoGalleryController extends ChangeNotifier {
-  PhotoGalleryController({required PhotoRepository repository}) : _repository = repository;
+  PhotoGalleryController({required this._repository});
   final PhotoRepository _repository;
   PhotoGalleryStatus status = PhotoGalleryStatus.initial;
 

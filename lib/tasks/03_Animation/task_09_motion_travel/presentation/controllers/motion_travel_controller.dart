@@ -7,7 +7,7 @@ import '../../domain/models/travel_country.dart';
 enum MotionTravelStatus { initial, loading, success, error }
 
 class MotionTravelController extends ChangeNotifier {
-  MotionTravelController({required MotionTravelRepository repository}) : _repository = repository;
+  MotionTravelController({required this._repository});
   final MotionTravelRepository _repository;
   MotionTravelStatus status = MotionTravelStatus.initial;
   List<TravelCountry> countries = [];
@@ -98,7 +98,9 @@ class MotionTravelController extends ChangeNotifier {
       for (final country in filteredCountries.take(6)) {
         if (_disposed || isOffline) break;
         if (heroUrls.containsKey(country.cca2) ||
-            !_attemptedHero.add(country.cca2)) continue;
+            !_attemptedHero.add(country.cca2)) {
+          continue;
+        }
         final url = await _repository.getHeroImage(country);
         if (_disposed) return;
         

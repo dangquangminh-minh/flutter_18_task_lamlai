@@ -7,7 +7,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../../domain/models/pixabay_photo.dart';
 
 class PixabayRemoteDataSource {
-  PixabayRemoteDataSource({required Dio dio}) : _dio = dio;
+  PixabayRemoteDataSource({required this._dio});
 
   final Dio _dio;
 

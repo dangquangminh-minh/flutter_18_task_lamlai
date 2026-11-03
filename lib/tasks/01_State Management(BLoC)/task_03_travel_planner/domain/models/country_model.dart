@@ -1,18 +1,22 @@
 class CountryModel {
   const CountryModel({
     required this.name,
-    required this.officialName,
+    required this.officialName, // tên c.thức
     required this.code,
     required this.capital,
     required this.region,
+    
     required this.subregion,
     required this.population,
     required this.flagUrl,
     required this.currencyCode,
     required this.currencyName,
     required this.currencySymbol,
+
     required this.language,
     required this.timezone,
+
+    //tọa độ kinh,vĩ
     required this.latitude,
     required this.longitude,
   });

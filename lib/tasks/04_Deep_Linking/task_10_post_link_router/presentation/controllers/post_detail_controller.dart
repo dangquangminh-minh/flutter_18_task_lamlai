@@ -15,9 +15,9 @@ enum PostDetailStatus {
 
 class PostDetailController extends ChangeNotifier {
   PostDetailController({
-    required PostRepository repository,
+    required this._repository,
     required this.postId,
-  }) : _repository = repository;
+  });
 
   final PostRepository _repository;
   final int postId;

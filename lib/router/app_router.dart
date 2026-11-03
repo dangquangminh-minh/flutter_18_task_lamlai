@@ -65,7 +65,7 @@ import '../tasks/04_Deep_Linking/task_12_campaign_gateway/services/campaign_coor
 
 
 
-// chương 5
+// ----------------------------chương 5
 // bài 13
 import '../tasks/05_Background_Tasks/task_13_daily_reminder/data/datasources/reminder_local_data_source.dart';
 import '../tasks/05_Background_Tasks/task_13_daily_reminder/data/datasources/reminder_remote_data_source.dart';
@@ -77,6 +77,27 @@ import '../tasks/05_Background_Tasks/task_14_weather_sync_worker/presentation/pa
 
 // bài 15
 import '../tasks/05_Background_Tasks/task_15_offline_news_sync/presentation/pages/news_sync_page.dart';
+
+
+
+
+// ------------------chương 6
+import '../tasks/06_Authentication/chapter6_firebase_gate.dart';
+import '../tasks/06_Authentication/chapter6_signed_in_guard.dart';
+
+// bài 16 
+import '../tasks/06_Authentication/task_16_campus_login/presentation/pages/campus_auth_gate.dart';
+
+// bài 17 
+import '../tasks/06_Authentication/task_17_social_sign_in/presentation/pages/task17_social_auth_gate.dart';
+
+// bài 18 
+import '../tasks/06_Authentication/task_18_secure_travel_account/services/task18_constants.dart';
+import '../tasks/06_Authentication/task_18_secure_travel_account/presentation/pages/task18_entry_page.dart';
+import '../tasks/06_Authentication/task_18_secure_travel_account/presentation/pages/task18_login_page.dart';
+
+import '../tasks/06_Authentication/task_18_secure_travel_account/presentation/pages/task18_travel_account_page.dart';
+import '../tasks/06_Authentication/task_18_secure_travel_account/presentation/pages/task18_offline_profile_page.dart';
 
 abstract final class AppRoutes {
   static const home = '/';
@@ -103,6 +124,11 @@ abstract final class AppRoutes {
   static const task13 = '/task-13';
    static const task14 = '/task-14';
   static const task15 = '/task-15';
+
+  // chương 6
+  static const task16 = '/task-16';
+  static const task17 = '/task-17';
+  static const task18 = Task18Constants.rootPath;
 }
 
 
@@ -540,5 +566,57 @@ final GoRouter appRouter = GoRouter(
         return const NewsSyncPage();
       },
     ),
+
+
+    // bài 16 
+    GoRoute(
+      path: AppRoutes.task16,
+      builder: (context, state) => const Chapter6FirebaseGate(
+        child: CampusAuthGate(),
+      ),
+    ),
+
+    // bài 17 
+    GoRoute(
+      path: AppRoutes.task17,
+      builder: (context, state) => const Chapter6FirebaseGate(
+        child: Task17SocialAuthGate(),
+      ),
+    ),
+
+    // bài 18 - ktra,khôi phục phiên
+    GoRoute(
+      path: AppRoutes.task18,
+      builder: (context, state) => const Chapter6FirebaseGate(
+        child: Task18EntryPage(),
+      ),
+    ),
+
+    // bài 18 - ui đăng nhập 
+    GoRoute(
+      path: Task18Constants.loginPath,
+      builder: (context, state) => const Chapter6FirebaseGate(
+        child: Task18LoginPage(),
+      ),
+    ),
+
+    // bài 18 - t.khoản được bảo vệ bằng auth guard
+    GoRoute(
+      path: Task18Constants.accountPath,
+      builder: (context, state) => const Chapter6FirebaseGate(
+        child: Chapter6SignedInGuard(
+          child: Task18TravelAccountPage(),
+        ),
+      ),
+    ),
+
+    // bài 18 - dl lưu trên thiết bị
+    GoRoute(
+      path: Task18Constants.offlinePath,
+      builder: (context, state) => const Chapter6FirebaseGate(
+        child: Task18OfflineProfilePage(),
+      ),
+    ),
+
   ],
 );

@@ -15,10 +15,10 @@ enum CountryShareDetailStatus {
 
 class CountryShareDetailController extends ChangeNotifier {
   CountryShareDetailController({
-    required CountryShareRepository repository,
+    required this._repository,
     this.code,
     this.name,
-  }) : _repository = repository;
+  });
 
   final CountryShareRepository _repository;
   final String? code;

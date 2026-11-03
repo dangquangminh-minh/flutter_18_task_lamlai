@@ -15,8 +15,8 @@ enum CountryShareListStatus {
 class CountryShareListController
     extends ChangeNotifier {
   CountryShareListController({
-    required CountryShareRepository repository,
-  }) : _repository = repository;
+    required this._repository,
+  });
 
   final CountryShareRepository _repository;
 

@@ -5,8 +5,8 @@ import '../datasources/pixabay_remote_data_source.dart';
 
 class PhotoRepository {
   PhotoRepository({
-    required PixabayRemoteDataSource remoteDataSource,
-  }) : _remoteDataSource = remoteDataSource;
+    required this._remoteDataSource,
+  });
 
   final PixabayRemoteDataSource _remoteDataSource;
 

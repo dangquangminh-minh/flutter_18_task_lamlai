@@ -5,8 +5,8 @@ import '../datasources/activity_remote_data_source.dart';
 
 class ActivityRepository {
   ActivityRepository({
-    required ActivityRemoteDataSource remoteDataSource,
-  }) : _remoteDataSource = remoteDataSource;
+    required this._remoteDataSource,
+  });
 
   final ActivityRemoteDataSource _remoteDataSource;
 

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../models/cart_item_model.dart';
 import '../services/product_service.dart';
+
 import 'cart_event.dart';
 import 'cart_state.dart';
 
@@ -44,11 +45,13 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     }
   }
 
+
+
   void _addProduct(
     AddProductEvent event,
     Emitter<CartState> emit,
   ) {
-    // Tạo list mới để không sửa trực tiếp dữ liệu của state cũ.
+    // tạo list mới để không sửa trực tiếp dl của state cũ
     final items = List<CartItemModel>.from(state.items);
 
     final index = items.indexWhere(
@@ -70,6 +73,8 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     emit(state.copyWith(items: items));
   }
 
+
+
   void _removeProduct(
     RemoveProductEvent event,
     Emitter<CartState> emit,
@@ -89,7 +94,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
         quantity: oldItem.quantity - 1,
       );
     } else {
-      // số lượng còn 1 mà tiếp tục giảm thì bỏ sản phẩm khỏi giỏ luôn
+      // sl còn 1 mà tiếp tục giảm thì bỏ sản phẩm khỏi giỏ luôn
       items.removeAt(index);
     }
 

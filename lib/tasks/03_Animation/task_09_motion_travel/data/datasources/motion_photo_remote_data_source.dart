@@ -6,7 +6,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../../domain/models/travel_country.dart';
 
 class MotionPhotoRemoteDataSource {
-  MotionPhotoRemoteDataSource({required Dio dio}) : _dio = dio;
+  MotionPhotoRemoteDataSource({required this._dio});
 
   final Dio _dio;
 

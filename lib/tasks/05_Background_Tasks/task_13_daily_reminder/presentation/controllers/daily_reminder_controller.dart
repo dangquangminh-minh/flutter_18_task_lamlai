@@ -19,9 +19,9 @@ enum DailyReminderStatus {
 class DailyReminderController
     extends ChangeNotifier {
   DailyReminderController({
-    required ReminderRepository repository,
-    required ReminderNotificationService notifications,
-  }) : _repository = repository,_notifications = notifications;
+    required this._repository,
+    required this._notifications,
+  });
 
   final ReminderRepository _repository;
   final ReminderNotificationService _notifications;

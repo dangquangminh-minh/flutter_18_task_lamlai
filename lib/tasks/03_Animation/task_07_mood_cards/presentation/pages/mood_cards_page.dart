@@ -90,7 +90,7 @@ class _MoodCardsPageState extends State<MoodCardsPage> {
           const SizedBox(height: 11),
           SizedBox(height: 40, child: ListView.separated(scrollDirection: Axis.horizontal,
             itemCount: controller.availableTypes.length,
-            separatorBuilder: (_, __) => const SizedBox(width: 8),
+            separatorBuilder: (_, _) => const SizedBox(width: 8),
             itemBuilder: (_, i) {
 
               final type = controller.availableTypes[i], selected = controller.selectedType == type;

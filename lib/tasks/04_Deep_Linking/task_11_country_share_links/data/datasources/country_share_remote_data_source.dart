@@ -18,8 +18,8 @@ class CountryShareRequestException implements Exception {
 
 class CountryShareRemoteDataSource {
   CountryShareRemoteDataSource({
-    required Dio dio,
-  }) : _dio = dio;
+    required this._dio,
+  });
 
   final Dio _dio;
 

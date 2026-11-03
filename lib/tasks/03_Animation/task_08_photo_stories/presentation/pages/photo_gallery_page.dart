@@ -122,7 +122,7 @@ class _PhotoGalleryPageState extends State<PhotoGalleryPage> {
   Widget _chips() => SizedBox(height: 43,
     child: ListView.separated(scrollDirection: Axis.horizontal,
       itemCount: categories.length,
-      separatorBuilder: (_, __) => const SizedBox(width: 7),
+      separatorBuilder: (_, _) => const SizedBox(width: 7),
       itemBuilder: (_, i) {
         final entry = categories.entries.elementAt(i);
         final selected = controller.selectedCategory == entry.key;

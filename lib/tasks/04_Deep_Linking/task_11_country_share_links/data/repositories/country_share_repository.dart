@@ -5,8 +5,8 @@ import '../datasources/country_share_remote_data_source.dart';
 
 class CountryShareRepository {
   CountryShareRepository({
-    required CountryShareRemoteDataSource remote,
-  }) : _remote = remote;
+    required this._remote,
+  });
 
   final CountryShareRemoteDataSource _remote;
 

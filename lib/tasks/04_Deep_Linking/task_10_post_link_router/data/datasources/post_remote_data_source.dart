@@ -17,8 +17,8 @@ class PostRequestException implements Exception {
 
 class PostRemoteDataSource {
   PostRemoteDataSource({
-    required Dio dio,
-  }) : _dio = dio;
+    required this._dio,
+  });
 
   final Dio _dio;
 

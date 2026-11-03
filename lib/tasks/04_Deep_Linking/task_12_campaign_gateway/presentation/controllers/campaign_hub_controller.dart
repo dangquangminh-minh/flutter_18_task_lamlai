@@ -6,8 +6,8 @@ import '../../services/campaign_coordinator.dart';
 
 class CampaignHubController extends ChangeNotifier {
   CampaignHubController({
-    required CampaignCoordinator coordinator,
-  }) : _coordinator = coordinator {
+    required this._coordinator,
+  }) {
     rawLink =
         'myapp://campaign/12?source=qr';
   }

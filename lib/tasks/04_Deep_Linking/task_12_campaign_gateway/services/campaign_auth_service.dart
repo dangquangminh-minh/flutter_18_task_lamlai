@@ -8,9 +8,9 @@ import 'campaign_link_parser.dart';
 
 class CampaignAuthService {
   CampaignAuthService({
-    required Box<dynamic> box,
-    required CampaignLinkParser parser,
-  }) : _box = box, _parser = parser;
+    required this._box,
+    required this._parser,
+  });
 
   final Box<dynamic> _box;
   final CampaignLinkParser _parser;

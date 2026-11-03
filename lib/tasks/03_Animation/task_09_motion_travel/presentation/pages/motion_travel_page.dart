@@ -108,7 +108,7 @@ class _MotionTravelPageState extends State<MotionTravelPage> {
   Widget _regions() => SizedBox(height: 42,
     child: ListView.separated(scrollDirection: Axis.horizontal,
       itemCount: controller.regions.length,
-      separatorBuilder: (_, __) => const SizedBox(width: 7),
+      separatorBuilder: (_, _) => const SizedBox(width: 7),
       itemBuilder: (_, i) {
         final entry = controller.regions.entries.elementAt(i);
         final selected = controller.selectedRegion == entry.key;

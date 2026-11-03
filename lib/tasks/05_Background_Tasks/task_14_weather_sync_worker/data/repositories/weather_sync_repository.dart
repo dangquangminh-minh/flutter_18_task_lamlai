@@ -10,10 +10,9 @@ import '../datasources/weather_remote_data_source.dart';
 
 class WeatherSyncRepository {
   WeatherSyncRepository({
-    required WeatherLocalDataSource local,
-    required WeatherRemoteDataSource remote,
-  }) : _local = local,
-       _remote = remote;
+    required this._local,
+    required this._remote,
+  });
 
   final WeatherLocalDataSource _local;
 

@@ -6,8 +6,8 @@ import '../../domain/models/campaign_content.dart';
 
 class CampaignLocalDataSource {
   CampaignLocalDataSource({
-    required Box<dynamic> box,
-  }) : _box = box;
+    required this._box,
+  });
 
   final Box<dynamic> _box;
 

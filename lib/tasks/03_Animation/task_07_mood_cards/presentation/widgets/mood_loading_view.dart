@@ -26,7 +26,7 @@ class _MoodLoadingViewState extends State<MoodLoadingView>
           style: TextStyle(color: Color(0xFF146B58), fontWeight: FontWeight.w700))),
       ...[190.0, 265.0, 142.0, 142.0].map((height) => Padding(
         padding: const EdgeInsets.only(bottom: 14),
-        child: AnimatedBuilder(animation: _pulse, builder: (_, __) =>
+        child: AnimatedBuilder(animation: _pulse, builder: (_, _) =>
           Container(height: height, decoration: BoxDecoration(
             color: Color.lerp(const Color(0xFFE0EDE5), const Color(0xFFF7FBF9),
               MediaQuery.disableAnimationsOf(context) ? .5 : _pulse.value),

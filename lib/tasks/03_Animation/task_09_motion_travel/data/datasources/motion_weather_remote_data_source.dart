@@ -6,7 +6,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../../domain/models/travel_weather.dart';
 
 class MotionWeatherRemoteDataSource {
-  MotionWeatherRemoteDataSource({required Dio dio}) : _dio = dio;
+  MotionWeatherRemoteDataSource({required this._dio});
 
   final Dio _dio;
 

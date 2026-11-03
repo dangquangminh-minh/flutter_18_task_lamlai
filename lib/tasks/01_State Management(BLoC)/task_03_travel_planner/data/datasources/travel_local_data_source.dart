@@ -5,7 +5,7 @@ import '../../domain/models/weather_model.dart';
 
 // lưu dl bằng hive
 class TravelLocalDataSource {
-  static const _boxName='task3_travel_cache_v2';
+  static const _boxName='task3_travel_cache_v2' ;
 
   Future<Box<dynamic>> _box() async {
     if(Hive.isBoxOpen(_boxName)) return Hive.box<dynamic>(_boxName);

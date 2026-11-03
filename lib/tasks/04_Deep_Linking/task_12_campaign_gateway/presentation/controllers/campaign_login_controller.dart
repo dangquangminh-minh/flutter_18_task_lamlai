@@ -7,8 +7,8 @@ import '../../services/campaign_coordinator.dart';
 class CampaignLoginController
     extends ChangeNotifier {
   CampaignLoginController({
-    required CampaignCoordinator coordinator,
-  }) : _coordinator = coordinator;
+    required this._coordinator,
+  });
 
   final CampaignCoordinator _coordinator;
 

@@ -18,10 +18,10 @@ enum CampaignDetailStatus {
 class CampaignDetailController
     extends ChangeNotifier {
   CampaignDetailController({
-    required CampaignRepository repository,
-    required CampaignAnalyticsService analytics,
+    required this._repository,
+    required this._analytics,
     required this.link,
-  }) : _repository = repository, _analytics = analytics;
+  });
 
   final CampaignRepository _repository;
   final CampaignAnalyticsService _analytics;

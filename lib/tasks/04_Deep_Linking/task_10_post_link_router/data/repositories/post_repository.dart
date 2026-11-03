@@ -4,8 +4,8 @@ import '../datasources/post_remote_data_source.dart';
 
 class PostRepository {
   PostRepository({
-    required PostRemoteDataSource remote,
-  }) : _remote = remote;
+    required this._remote,
+  });
 
   final PostRemoteDataSource _remote;
 

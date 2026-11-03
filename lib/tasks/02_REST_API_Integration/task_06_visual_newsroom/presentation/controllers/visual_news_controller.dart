@@ -8,8 +8,7 @@ enum NewsroomStatus { initial, loading, success, error }
 
 
 class VisualNewsController extends ChangeNotifier {
-  VisualNewsController({required VisualNewsRepository repository})
-      : _repository = repository;
+  VisualNewsController({required this._repository});
   final VisualNewsRepository _repository;
 
   NewsroomStatus status = NewsroomStatus.initial;

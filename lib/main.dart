@@ -1,28 +1,33 @@
+
 import 'package:app_links/app_links.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 
+import 'firebase_options.dart'; //chương 6
 import 'router/app_router.dart';
-
 
 import 'tasks/04_Deep_Linking/chapter4_dependencies.dart';
 import 'tasks/04_Deep_Linking/task_10_post_link_router/services/deep_link_bootstrap.dart';
-
 
 import 'tasks/05_Background_Tasks/chapter5_bootstrap.dart';
 import 'tasks/05_Background_Tasks/task_13_daily_reminder/services/reminder_notification_service.dart';
 
 Future<void> main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
 
   // đọc api từ .env
   await dotenv.load(fileName: '.env');
 
+  // khởi tạo firebase trước khi chạy app
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
+  // khởi tạo bộ nhớ lưu trạng thái bloc
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
         ? HydratedStorageDirectory.web
@@ -31,26 +36,30 @@ Future<void> main() async {
           ),
   );
 
+  // chuongw 4
   await Chapter4Dependencies.initialize();
 
+  // chương 5
   final notificationLaunchPayload = await Chapter5Bootstrap.initialize(
     onReminderTap: (payload) {
-      if (payload == ReminderNotificationService.payload) {
+      if (payload == ReminderNotificationService.payload ) {
+
         appRouter.go('${AppRoutes.task13}?from=notification');
       }
     },
   );
 
+  // lấy app links
   final appLinks = Chapter4Dependencies.appLinks;
 
   runApp(MyApp(appLinks: appLinks));
 
+  if (notificationLaunchPayload == ReminderNotificationService.payload) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
 
-    if (notificationLaunchPayload == ReminderNotificationService.payload) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        appRouter.go('${AppRoutes.task13}?from=notification');
-      });
-    }
+      appRouter.go('${AppRoutes.task13}?from=notification');
+    });
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -58,7 +67,6 @@ class MyApp extends StatelessWidget {
     super.key,
     required this.appLinks,
   });
-
 
   final AppLinks appLinks;
 
@@ -75,16 +83,12 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-
       routerConfig: appRouter,
 
-      
       builder: (context, child) {
         return DeepLinkBootstrap(
           appLinks: appLinks,
           router: appRouter,
-
-
           child: child ?? const SizedBox.shrink(),
         );
       },

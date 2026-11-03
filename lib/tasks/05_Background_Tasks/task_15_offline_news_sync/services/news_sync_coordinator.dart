@@ -14,10 +14,10 @@ import '../domain/models/sync_session.dart';
 
 class NewsSyncCoordinator {
   NewsSyncCoordinator({
-    required NewsLocalDatabase local,
-    required NewsRemoteDataSource remote,
-    required ThumbnailFileStore thumbnails,
-  }) : _local = local, _remote = remote,_thumbnails = thumbnails;
+    required this._local,
+    required this._remote,
+    required this._thumbnails,
+  });
 
   final NewsLocalDatabase _local;
   final NewsRemoteDataSource _remote;
